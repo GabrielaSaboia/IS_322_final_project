@@ -7,7 +7,7 @@ const errorReducer = (state = DEFAULT_STATE, action) => {
         case 'LOAD_ERROR':
             return {
                 ...state,
-                get_accounts
+                get_accounts:''
             }
     }
-}
+};

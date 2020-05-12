@@ -19,6 +19,13 @@ export const displayTransactions = (display) => {
     }
 };
 
+export const setAccounts = (accounts) => {
+    return {
+        type: 'SET_ACCOUNTS',
+        payload: accounts
+    }
+};
+
 export const addAccount = (newAccount) => {
     return{
         type: 'ADD_ACCOUNT',
@@ -27,10 +34,10 @@ export const addAccount = (newAccount) => {
     }
 };
 
-export const deleteAccount = (account) => {
+export const deleteAccount = (accountId) => {
     return{
         type: 'DELETE_ACCOUNT',
-        payload: account
+        payload: accountId
     }
 };
 
