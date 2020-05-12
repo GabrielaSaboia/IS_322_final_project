@@ -1,16 +1,33 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addAccount } from '../actions';
+import { deleteAccount } from '../actions';
 import mapStateToProps from "react-redux/lib/connect/mapStateToProps";
 
-//import Account from './Account';
+import Account from './Account';
 
 class AccountsList extends React.Component {
 
-    //addAccount = (account) => {
-      //  this.props.addAccount(account.id)
-   // }
+    deleteAccount = (account) => {
+        this.props.deleteAccount(account.id);
+   }
 
+   render() {
+        const accountsList = this.props.accounts.map(account => {
+            return <Account name={name} key={account.id} deleteAccount={this.deleteAccount} />
+        });
+
+        return(
+            <ul className="list-group">
+                {accountsList}
+            </ul>
+        )
+    }
 }
 
-export default connect(mapStateToProps, { addAccount })(AccountsList);
+const mapStateToProps = (state) => {
+    return {
+        accounts: state.accounts
+    };
+}
+
+export default connect(mapStateToProps, { deleteAccount })(AccountsList);
