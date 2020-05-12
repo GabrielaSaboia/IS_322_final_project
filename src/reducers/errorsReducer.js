@@ -9,5 +9,9 @@ const errorReducer = (state = DEFAULT_STATE, action) => {
                 ...state,
                 get_accounts:''
             }
+        default:
+            return true;
     }
 };
+
+export default errorReducer;
