@@ -12,7 +12,9 @@ class AccountsList extends React.Component {
 
    render() {
         const accountsList = this.props.accounts.map(account => {
-            return <Account name={name} key={account.id} deleteAccount={this.deleteAccount} />
+            return <Account name={account.name}
+                            key={account.id}
+                            deleteAccount={this.deleteAccount} />
         });
 
         return(
@@ -29,4 +31,5 @@ const mapStateToProps = (state) => {
     };
 }
 
-export default connect(mapStateToProps, { deleteAccount })(AccountsList);
+export default connect(mapStateToProps,
+    { deleteAccount })(AccountsList);
