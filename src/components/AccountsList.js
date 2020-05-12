@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { deleteAccount } from '../actions';
-import mapStateToProps from "react-redux/lib/connect/mapStateToProps";
 
 import Account from './Account';
 
