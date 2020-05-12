@@ -3,7 +3,7 @@ import axios from 'axios';
 import { connect } from 'react-redux';
 
 import { setAccounts, loadError} from '../actions';
-
+import AccountsList from './AccountsList';
 class App extends React.Component{
 
 
@@ -23,7 +23,7 @@ getData() {
 render(){
 return (
     <div className="container">
-            App
+            <AccountsList/>
         </div>
         );
 }
@@ -33,7 +33,6 @@ const mapStateToProps = (state) => {
     return {
         errorMessage: state.errors.get_accounts
     };
-
 }
 
 export default connect(mapStateToProps, { setAccounts, loadError })(App);
