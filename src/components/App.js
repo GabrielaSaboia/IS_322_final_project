@@ -31,7 +31,7 @@ return (
 
 const mapStateToProps = (state) => {
     return {
-        errorMessage: state.errors.setAccounts
+        errorMessage: state.errors.get_accounts
     };
 
 }
