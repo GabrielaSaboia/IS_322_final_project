@@ -31,5 +31,4 @@ const mapStateToProps = (state) => {
     };
 }
 
-export default connect(mapStateToProps,
-    { deleteAccount })(AccountsList);
+export default connect(mapStateToProps, { deleteAccount })(AccountsList);

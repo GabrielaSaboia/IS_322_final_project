@@ -18,7 +18,7 @@ class AddAccount extends React.Component {
                <label htmlFor="newAccount">Enter New Account</label>
                <input type="text" className="form-control"
                       name="newAccount"
-                      value{this.state.newAccount}
+                      value={this.state.newAccount}
                    onChange={(e) =>
                        this.setState({newAccount: e.target.value})} />
            </form>

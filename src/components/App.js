@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 import { setAccounts, loadError} from '../actions';
 import AccountsList from './AccountsList';
+import AddAccount from './AddAccount';
 class App extends React.Component{
 
 
@@ -23,7 +24,8 @@ getData() {
 render(){
 return (
     <div className="container">
-            <AccountsList/>
+    <AddAccount/>
+    <AccountsList/>
         </div>
         );
 }
