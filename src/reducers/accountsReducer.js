@@ -5,8 +5,12 @@ const accountsReducer = (state =[], action) => {
              ...state, {id: state.length + 1,
                  name: action.payload.name,
                  balance: action.payload.balance
-         } //maybe add another payload to add acount action
+         } //maybe add another payload to add account action
          ];
+
+     case 'SET_ACCOUNT':
+         return action.payload;
+
      case 'DELETE_ACCOUNT':
          const accountIndex = state.findIndex(t =>
              t.id === action.payload);
