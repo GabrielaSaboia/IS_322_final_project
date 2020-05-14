@@ -1,5 +1,6 @@
 const DEFAULT_STATE = {
-    get_accounts: ''
+    get_accounts: '',
+    get_transactions:''
 };
 
 const errorReducer = (state = DEFAULT_STATE, action) => {
@@ -8,6 +9,11 @@ const errorReducer = (state = DEFAULT_STATE, action) => {
             return {
                 ...state,
                 get_accounts:''
+            }
+        case 'TRANSACTION_ERROR':
+            return {
+                ...state,
+                get_transactions:''
             }
         default:
             return true;

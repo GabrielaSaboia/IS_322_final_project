@@ -1,42 +1,24 @@
 import React from 'react';
-import axios from 'axios';
-import { connect } from 'react-redux';
+import { BrowserRouter, Route } from 'react-router-dom';
 
-
-import AccountsList from './AccountsList';
+import PageTabs from './PageTabs';
+import AccountDisplay from './AccountDisplay';
 import AddAccount from './AddAccount';
-import { setAccounts, loadError} from '../actions';
+import Transactions from './Transactions';
 
-
-class App extends React.Component{
-
-componentDidMount(){
-this.getData();
-}
-
-getData() {
-    axios.get ('http://my-json-server.typicode.com/bnissen24/project2DB/accounts')
-        .then(response => {
-            this.props.setAccounts(response.data);
-        }).catch(error => {
-            this.props.loadError();
-    });
-}
-
-render(){
-return (
-    <div className="container">
-    <AddAccount/>
-    <AccountsList/>
+const App = () => {
+return(
+    <div>
+    <BrowserRouter>
+    <PageTabs/>
+        <div>
+        <Route path="/" exact component={AccountDisplay} />
+        <Route path="/page2"  component={Transactions} />
+        <Route path="/page3" exact component={AddAccount} />
         </div>
-        );
-}
-}
-
-const mapStateToProps = (state) => {
-    return {
-        errorMessage: state.errors.get_accounts
-    };
+    </BrowserRouter>
+    </div>
+)
 }
 
-export default connect(mapStateToProps, { setAccounts, loadError })(App);
+export default App;

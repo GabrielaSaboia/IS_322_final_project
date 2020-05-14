@@ -12,9 +12,9 @@ export const makeWithdrawal = (withdrawal) => {
     }
 };
 
-export const displayTransactions = (display) => {
+export const setTransactions = (display) => {
     return {
-        type: 'DISPLAY_TRANSACTIONS',
+        type: 'SET_TRANSACTIONS',
         payload: display
     }
 };
@@ -44,6 +44,12 @@ export const deleteAccount = (accountId) => {
 export const loadError = errorMessage => {
     return{
         type: 'LOAD_ERROR'
+    }
+};
+
+export const transactionError = errorMessage => {
+    return{
+        type: 'TRANSACTION_ERROR'
     }
 };
 
