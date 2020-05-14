@@ -12,7 +12,7 @@ class AccountsList extends React.Component {
 
    render() {
         const accountsList = this.props.accounts.map(account => {
-            return <Account name={account.name}
+            return <Account account={account}
                             key={account.id}
                             deleteAccount={this.deleteAccount} />
         });

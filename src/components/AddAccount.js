@@ -2,8 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { addAccount } from '../actions';
 
+
 class AddAccount extends React.Component {
-    state = { newAccount:'' }
+    state = {
+        newAccount:'' }
 
     onFormSubmit = (event) => {
         event.preventDefault();
@@ -15,7 +17,9 @@ class AddAccount extends React.Component {
     render() {
         return (
            <form className="form-group" onSubmit={this.onFormSubmit}>
-               <label htmlFor="newAccount">Enter New Account</label>
+               <h5>Enter New Account Information</h5>
+
+               <label htmlFor="newAccount">Name</label>
                <input type="text" className="form-control"
                       name="newAccount"
                       value={this.state.newAccount}

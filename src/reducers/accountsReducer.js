@@ -3,8 +3,7 @@ const accountsReducer = (state =[], action) => {
      case 'ADD_ACCOUNT':
          return [
              ...state, {id: state.length + 1,
-                 name: action.payload.name,
-                 balance: action.payload.balance
+                 name: action.payload,
          } //maybe add another payload to add account action
          ];
 

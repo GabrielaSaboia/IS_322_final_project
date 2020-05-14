@@ -2,11 +2,13 @@ import React from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
 
-import { setAccounts, loadError} from '../actions';
+
 import AccountsList from './AccountsList';
 import AddAccount from './AddAccount';
-class App extends React.Component{
+import { setAccounts, loadError} from '../actions';
 
+
+class App extends React.Component{
 
 componentDidMount(){
 this.getData();

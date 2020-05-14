@@ -4,8 +4,8 @@ const transactionsReducer = (state = [], action) => {
             return state + action.payload;
         case 'MAKE_WITHDRAWAL':
             return ;
-        case 'DISPLAY_TRANSACTIONS':
-            return ;
+        case 'SET_TRANSACTIONS':
+            return action.payload;
         default:
             return state;
     }
