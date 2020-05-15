@@ -1,17 +1,21 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addAccount } from '../actions';
+import { addAccount, makeDeposit } from '../actions';
 
 
 class AddAccount extends React.Component {
     state = {
-        newAccount:'' }
+        newAccount:'',
+        newBalance:''}
 
     onFormSubmit = (event) => {
         event.preventDefault();
 
         this.props.addAccount(this.state.newAccount);
         this.setState({ newAccount: '' })
+
+        this.props.makeDeposit(this.state.newAccount);
+        this.setState( {newBalance: '' })
     }
 
     render() {
@@ -25,9 +29,18 @@ class AddAccount extends React.Component {
                       value={this.state.newAccount}
                    onChange={(e) =>
                        this.setState({newAccount: e.target.value})} />
+
+               <label htmlFor="newBalance">Initial Deposit</label>
+               <input type="text" className="form-control"
+                      name="newBalance"
+                      value={this.state.newBalance}
+                      onChange={(e) =>
+                          this.setState({newBalance: e.target.value})} />
+
+                          <button className="btn btn-success" value='submit'>Submit</button>
            </form>
         );
     }
 }
 
-export default connect(null, {addAccount})(AddAccount);
+export default connect(null, {addAccount, makeDeposit})(AddAccount);
