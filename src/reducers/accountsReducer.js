@@ -1,4 +1,5 @@
 const accountsReducer = (state =[], action) => {
+    let accountIndex;
  switch (action.type) {
      case 'ADD_ACCOUNT':
          return [
@@ -13,11 +14,18 @@ const accountsReducer = (state =[], action) => {
          return action.payload;
 
      case 'DELETE_ACCOUNT':
-         const accountIndex = state.findIndex(t =>
+         accountIndex = state.findIndex(t =>
              t.id === action.payload);
          let accountList = [...state];
          accountList.splice(accountIndex, 1);
          return accountList;
+
+    case 'MAKE_DEPOSIT':
+        accountIndex = state.findIndex(t =>
+             t.id === action.payload.accountId);
+        const newState = [ ...state ];
+        newState[accountIndex].balance += action.payload.amount;
+        return newState;
 
          default:
          return state;

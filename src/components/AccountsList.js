@@ -11,7 +11,7 @@ class AccountsList extends React.Component {
    }
 
     makeDeposit = (account) => {
-        this.props.makeDeposit(account.id);
+        this.props.makeDeposit(account.id, 10);
     }
 
     makeWithdrawal = (account) => {

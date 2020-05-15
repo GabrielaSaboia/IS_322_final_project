@@ -2,13 +2,14 @@ const transactionsReducer = (state = [], action) => {
     switch (action.type) {
 
         case 'MAKE_DEPOSIT':
-            /*
-            const accountIndex = state.findIndex(t =>
-            t.id === action.payload);
-            let newBalance = [...state];
-            newBalance.splice( accountIndex, 1,  );
-            */
-            return;
+            return [
+                ...state, {
+                    name: 'Set Transation Name',
+                    type: 'deposit',
+                    amount: action.payload.amount,
+                    accountId: action.payload.accountId
+                }
+            ]
 
         case 'MAKE_WITHDRAWAL':
             return ;

@@ -1,7 +1,7 @@
-export const makeDeposit = (deposit) => {
+export const makeDeposit = (accountId, amount) => {
     return{
         type: 'MAKE_DEPOSIT',
-        payload: deposit
+        payload: { accountId, amount }
     }
 };
 
