@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 
 import AccountsList from './AccountsList';
+import AddAccount from "./AddAccount";
 import './AccountDisplay.css';
 import { setAccounts, loadError} from '../actions';
 
@@ -26,8 +27,13 @@ class App extends React.Component{
 
     render(){
         return (
-            <div className="container card_position">
-                <AccountsList/>
+
+            <div className="container">
+                <AddAccount/>
+
+                <div className="card_container">
+                    <AccountsList/>
+                </div>
             </div>
         );
     }

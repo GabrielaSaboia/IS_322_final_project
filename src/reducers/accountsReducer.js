@@ -6,7 +6,6 @@ const accountsReducer = (state =[], action) => {
              ...state, {
                  name: action.payload,
                  id: state.length + 1,
-                 balance: action.payload.balance
          } //maybe add another payload to add account action
          ];
 

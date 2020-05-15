@@ -26,11 +26,11 @@ export const setAccounts = (accounts) => {
     }
 };
 
-export const addAccount = (newAccount, balance) => {
+export const addAccount = (newAccount) => {
     return{
         type: 'ADD_ACCOUNT',
         payload: newAccount,
-        payload2: balance
+
         //update payloads according to info taken to add account
     }
 };
