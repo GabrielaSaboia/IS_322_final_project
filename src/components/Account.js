@@ -7,13 +7,29 @@ const Account = props => {
             <p style={{padding: '10px'}}>
                 Balance: ${ props.account.balance }
             </p>
-            <button type="button"
-                    onClick={() =>
-                        props.deleteAccount(props.account)}
-                    className="btn btn-primary"
-                    style={{float: 'right', width: '75px' }}>
-                Delete
-            </button>
+            <div style={{ display: 'flex', flexDirection: 'row' }}>
+                <button type="button"
+                        onClick={() =>
+                            props.deleteAccount(props.account)}
+                        className="btn btn-danger"
+                        style={{ margin: '10px', width: '75px' }}>
+                    Delete
+                </button>
+                <button type="button"
+                        onClick={() =>
+                            props.makeWithdrawal(props.account)}
+                        className="btn btn-warning"
+                        style={{ margin: '10px', width: '100px' }}>
+                    Withdraw
+                </button>
+                <button type="button"
+                        onClick={() =>
+                            props.makeDeposit(props.account)}
+                        className="btn btn-success"
+                        style={{ margin: '10px', width: '90px' }}>
+                    Deposit
+                </button>
+            </div>
         </li>
     );
 };

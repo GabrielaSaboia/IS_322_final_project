@@ -27,6 +27,12 @@ class PageTabs extends React.Component {
                         <h4>Transactions</h4>
                     </a>
                 </li>
+                <li className='nav-item'>
+                    <a className={this.isActiveTab('/page3')} to="/page3"
+                        onClick={event => this.onTabClick(event, '/page3')}>
+                        <h4>New Account</h4>
+                    </a>
+                </li>
             </ul>
         )
     }

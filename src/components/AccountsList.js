@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { deleteAccount } from '../actions';
+import { deleteAccount, makeDeposit, makeWithdrawal } from '../actions';
 
 import Account from './Account';
 
@@ -10,11 +10,22 @@ class AccountsList extends React.Component {
         this.props.deleteAccount(account.id);
    }
 
+    makeDeposit = (account) => {
+        this.props.makeDeposit(account.id);
+    }
+
+    makeWithdrawal = (account) => {
+        this.props.makeWithdrawal(account.id);
+    }
+
+
    render() {
         const accountsList = this.props.accounts.map(account => {
             return <Account account={account}
                             key={account.id}
-                            deleteAccount={this.deleteAccount} />
+                            deleteAccount={this.deleteAccount}
+                            makeDeposit={this.makeDeposit}
+                            makeWithdrawal={this.makeWithdrawal}/>
         });
 
         return(
@@ -31,4 +42,4 @@ const mapStateToProps = (state) => {
     };
 }
 
-export default connect(mapStateToProps, { deleteAccount })(AccountsList);
+export default connect(mapStateToProps, { deleteAccount, makeDeposit, makeWithdrawal })(AccountsList);
